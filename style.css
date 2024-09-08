@@ -1,0 +1,35 @@
+path {
+    fill:#54585Ad3;
+}
+
+.county path:hover {
+fill: #582C83;  
+stroke-width: 3px;
+transition: fill 0.2s;
+}    
+
+.county:focus-visible path {
+fill: #582C83;  
+stroke-width: 3px;
+transition: fill 0.2s;
+}
+
+.county:focus {
+    outline: none;
+}
+
+.county:focus-visible text {
+    visibility: visible;
+}
+
+.county:focus-visible title {
+    visibility: visible;
+}
+
+.county text {
+    visibility: hidden;
+}
+
+.county:hover text {
+    visibility: visible;
+}
