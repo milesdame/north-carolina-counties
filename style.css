@@ -33,3 +33,28 @@ transition: fill 0.2s;
 .county:hover text {
     visibility: visible;
 }
+
+.correct {
+    fill: #582C83;  
+    stroke-width: 3px;
+    transition: fill 0.2s;
+    }    
+
+#results {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+form input {
+    width: 70%;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
