@@ -29,14 +29,13 @@
         // each time the user types check the input value against the county list
             if (counties.includes(attempt)) {
                 console.log("YES");
-
                 count++;
                 playerEntries.push(attempt)
                 document.getElementById("textInput").value = '';
                 console.log(count);
                 console.log(count.toString);
                 let total = document.createTextNode(count.toString());
-                document.getElementById("total").replaceChild(total);
+                document.getElementById("total").textContent = count.toString();
             }
         }
     </script>
