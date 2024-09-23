@@ -17,8 +17,19 @@
   <body id="main">
     <h1>North Carolina Counties Quiz</h1>
     <div>
-      <p id="demo"></p>
-      <button onclick="startGame()">Start</button>
+      <form>
+        <!--
+          <input type="text" id="textInput" placeholder="enter county name" oninput="checkInput()" onkeydown="if(event.keyCode === 13) { 
+            return false;
+        }">-->
+        <button id="startbtn" onclick="startGame()">Start</button>
+      </form>
+      <div id="progress">
+        
+        <p id="demo"></p>
+        <p id="total"></p>
+      </div>
+      
     </div>
 
     <script>
@@ -32,6 +43,7 @@
         document.querySelector("form").appendChild(input);
         document.querySelector("button").remove();
         timer();
+        document.getElementById("total").textContent = "Total: " + count + "/100 guessed";
       }
     </script>
 <script>
@@ -67,16 +79,6 @@ function timer () {
 
 
 </script>
-
-    <form>
-      <!--
-        <input type="text" id="textInput" placeholder="enter county name" oninput="checkInput()" onkeydown="if(event.keyCode === 13) { 
-          return false;
-      }">-->
-    </form>
-    <div id="results">
-      <p>Total: </p><p id="total"> 0 </p><p>/100</p>
-    </div>
     <script>
         function checkInput() {
             let attemptRaw = document.getElementById("textInput").value;
@@ -95,7 +97,9 @@ function timer () {
                 let classes = element.classList;
                 classes.add("correct");
                 let total = document.createTextNode(count.toString());
-                document.getElementById("total").textContent = count.toString();
+                let textStr = "Total: " + total.toString() + "/100 guessed";
+                let textNode = document.createTextNode(textStr);
+                document.getElementById("total").textContent = "Total: " + count + "/100 guessed";
             } 
 
             if (correctCounties.includes(attempt)) {
