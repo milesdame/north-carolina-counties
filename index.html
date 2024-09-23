@@ -16,10 +16,56 @@
   </head>
   <body id="main">
     <h1>North Carolina Counties Quiz</h1>
+    <p id="demo"></p>
+    <button onclick="startGame()">Start</button>
+    <script>
+      function startGame(){
+        let input = document.createElement("input");
+        input.setAttribute("type", "text");
+        input.setAttribute("id", "textInput");
+        input.setAttribute("placeholder", "enter county name");
+        input.setAttribute("onInput", "checkInput()");
+        input.setAttribute("onkeydown", "if(event.keyCode === 13) { return false; }");
+        document.querySelector("form").appendChild(input);
+      }
+    </script>
+<script>
+// Set the date we're counting down to
+var countDownDate = Date.now() + 600000;
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+    document.getElementById("textInput").disabled = true;
+  }
+}, 1000);
+</script>
+
     <form>
+      <!--
         <input type="text" id="textInput" placeholder="enter county name" oninput="checkInput()" onkeydown="if(event.keyCode === 13) { 
           return false;
-      }">
+      }">-->
     </form>
     <div id="results">
       <p>Total: </p><p id="total"> 0 </p><p>/100</p>
