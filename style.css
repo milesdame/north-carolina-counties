@@ -71,3 +71,26 @@ section {
 #startbtn {
     width: 70%;
 }
+
+svg {
+    height: auto;
+}
+
+@media screen and (min-width: 750px) {
+    #progress {
+        justify-content: center;
+    }
+
+    #progress > p {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    
+}
+
+@media screen and (max-width: 749px) {
+    form input, #startbtn {
+        width: 90%;
+    }
+    
+}
