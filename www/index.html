@@ -6,15 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NC Counties Quiz</title>
     <link rel="stylesheet" href="static/css/style.css">
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <script>  
       let playerEntries = [];
       let count = 0;
       const counties = ["nash", "clay", "mecklenburg", "pitt", "anson", "carteret", "sampson", "northampton", "currituck", "jones", "harnett", "franklin", "caswell", "mitchell", "craven", "dare", "columbus", "mcdowell", "hyde", "edgecombe", "lenoir", "madison", "pender", "greene", "jackson", "polk", "davie", "rowan", "martin", "macon", "cherokee", "rutherford", "yancey", "halifax", "moore", "burke", "onslow", "bertie", "pamlico", "montgomery", "wilkes", "ashe", "brunswick", "surry", "cumberland", "buncombe", "pasquotank", "camden", "robeson", "swain", "hoke", "hertford", "caldwell", "new hanover", "wake", "beaufort", "stanly", "davidson", "bladen", "haywood", "johnston", "henderson", "richmond", "scotland", "tyrrell", "guilford", "wilson", "cabarrus", "chatham", "gates", "person", "orange", "lee", "cleveland", "watauga", "durham", "stokes", "wayne", "granville", "alexander", "lincoln", "alleghany", "duplin", "washington", "union", "gaston", "forsyth", "warren", "avery", "catawba", "iredell", "yadkin", "chowan", "rockingham", "transylvania", "graham", "vance", "alamance", "randolph", "perquimans"];
       let correctCounties = []; 
+
+      /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      } 
     </script>
   </head>
   <body id="main">
+
+    <nav class="topnav" id="myTopnav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="scores.html">Scores</a></li>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </ul>
+    </nav>
     <h1>North Carolina Counties Quiz</h1>
     <div>
       <form>
