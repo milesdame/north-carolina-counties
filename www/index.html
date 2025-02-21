@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NC Counties Quiz</title>
     <link rel="stylesheet" href="static/css/style.css">
-    <link rel="stylesheet" href="static/css/base-theme.css">
+    <link id="theme-style" rel="stylesheet" href="static/css/base-theme.css">
     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    
@@ -29,7 +29,7 @@
     </script>
   </head>
   <body id="main">
-
+    <header>
     <nav class="topnav" id="myTopnav">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -40,8 +40,10 @@
         </a>
       </ul>
     </nav>
+  </header>
+  <main>
     <h1>North Carolina Counties Quiz</h1>
-    <div>
+    <div id="player-controls">
       <form>
         <!--
           <input type="text" id="textInput" placeholder="enter county name" oninput="checkInput()" onkeydown="if(event.keyCode === 13) { 
@@ -238,5 +240,10 @@ function timer () {
             </g>
             </svg>
     </section>
+  </main>
+    <footer>
+      <p>Copyright 2025 Miles Dame. Sources</p>
+    </footer>
   </body>
+
 </html>
