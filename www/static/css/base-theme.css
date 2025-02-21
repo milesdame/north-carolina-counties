@@ -1,0 +1,60 @@
+/* This is the default theme that loads on the website and serves as the base for all other themes */
+
+body {
+    background-color: #FFFFFF;
+}
+
+h1 {
+    color: #000000;
+}
+
+p {
+    color: #000000;
+}
+
+footer {
+    background-color: #BF0A30;
+}
+
+/* Map Styles */
+path {
+    fill:#9e9e9f;
+}
+
+.county path:hover {
+    fill: #582C83;  
+    }    
+
+
+.county:focus-visible path {
+    fill: #582C83;  
+
+}
+
+.correct {
+    fill: #BF0A30;  
+}    
+
+/* Navigation Styles */
+
+ /* Add a black background color to the top navigation */
+.topnav {
+    background-color: #002868;
+}
+
+/* Style the links inside the navigation bar */
+.topnav ul li a {
+    color: #FFCA00;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+background-color: #FFCA00;
+color: #002868;
+}
+
+/* Add an active class to highlight the current page */
+.topnav li a.active {
+background-color: #002868;
+color: #FFCA00;
+}
