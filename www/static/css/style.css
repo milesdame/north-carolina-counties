@@ -43,7 +43,12 @@ form {
 }
 
 form input {
-    width: 70%;
+    width: 70vw;
+    text-align: center;
+    border-radius: 5px;
+    padding: 12px 32px;
+    font-size: 16px;
+    touch-action: manipulation;
 }
 
 body {
@@ -65,20 +70,31 @@ ul {
     margin: 0;
 }
 
-h1 {
+input::placeholder {
+    transition: opacity 0.3s ease-in-out;
+}
 
+input:focus::placeholder {
+    opacity: 0;
 }
 
 section {
     margin: 0 20px 0 20px;
 }
 
-#player-controls {
+footer {
+    display: flex;
+    justify-content: center;
+}
 
+#player-controls {
+    display: flex;
+    flex-direction: column;
 }
 
 #progress {
-
+    display: flex;
+    justify-content: space-around;
 }
 
 #startbtn {
@@ -86,7 +102,7 @@ section {
 }
 
 svg {
-    height: auto;
+    width: 90vw;
 }
 
 @media screen and (min-width: 750px) {
@@ -103,7 +119,7 @@ svg {
 
 @media screen and (max-width: 749px) {
     form input, #startbtn {
-        width: 90%;
+        width: 70vw;
     }
     
 }

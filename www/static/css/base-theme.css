@@ -14,6 +14,8 @@ p {
 
 footer {
     background-color: #BF0A30;
+    display: flex;
+    justify-content: center;
 }
 
 /* Map Styles */
@@ -57,4 +59,15 @@ color: #002868;
 .topnav li a.active {
 background-color: #002868;
 color: #FFCA00;
+}
+
+#startbtn {
+    background-color: #FFCA00;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 32px;
+}
+
+footer p {
+    color:#FFFFFF;
 }
