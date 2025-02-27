@@ -9,7 +9,7 @@
     <link id="theme-style" rel="stylesheet" href="static/css/nc-state-theme.css">
     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   
+    <script src="static/js/timer.js" defer></script>
 
     <script>  
       let playerEntries = [];
@@ -56,10 +56,14 @@
         <p id="demo"></p>
         <p id="total"></p>
       </div>
+      <div id="alertZone">
+
+      </div>
       
     </div>
 
     <script>
+      
       function startGame(){
         timer();
         let input = document.createElement("input");
@@ -74,40 +78,26 @@
         document.getElementById("total").textContent = count + "/100 guessed";
       }
     </script>
-<script>
-function timer () {
-  // Set the date we're counting down to
-  var countDownDate = Date.now() + 600000;
-  
-  // Update the count down every 1 second
-  var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = minutes + "m " + ": " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "Time's Up!";
-    document.getElementById("textInput").disabled = true;
-  }
-  }, 1000);
-}
 
 
-
-</script>
     <script>
+        
+
+        function alreadyGuessed(guess) {
+          console.log("MAKING IT HERE");
+          let paragraph = document.createElement("p");
+          paragraph.setAttribute("id", "alert");
+          paragraph.textContent = " Already Guessed " + guess + "!";
+          paragraph.setAttribute("class", "already-guessed");
+          document.getElementById("alertZone").appendChild(paragraph);
+          setTimeout(clearAlert, 1000);
+        }
+
+        function clearAlert() {
+          let alertElement = document.getElementById("alert");
+          alertElement.remove();
+        }
+
         function checkInput() {
             let attemptRaw = document.getElementById("textInput").value;
             console.log(attemptRaw);
@@ -128,9 +118,9 @@ function timer () {
                 let textStr = "Total: " + total.toString() + "/100 guessed";
                 let textNode = document.createTextNode(textStr);
                 document.getElementById("total").textContent = "Total: " + count + "/100 guessed";
-            } 
-
-            if (correctCounties.includes(attempt)) {
+            } else if (correctCounties.includes(attempt)) {
+              console.log("ALREADY GUESSED"); 
+              alreadyGuessed(attempt);
               document.getElementById("textInput").value = '';
             }
         }
@@ -241,6 +231,59 @@ function timer () {
             </g>
             </svg>
     </section>
+  <div id="table-container">
+    <table id="mountain-table">
+      <tr>
+        <th>Mountains</th>
+      </tr>
+      <tr>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+      </tr>
+    </table>
+    <table id="piedmont-table">
+      <tr>
+        <th>Piedmont</th>
+      </tr>
+      <tr>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+      </tr>
+    </table>
+    <table id="coastal-table">
+    <tr>
+      <th>Coastal Plain</th>
+    </tr>
+    <tr>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+    </tr>
+  </table>
+  </div>
   </main>
     <footer>
       <p>Copyright 2025 Miles Dame. Sources</p>
