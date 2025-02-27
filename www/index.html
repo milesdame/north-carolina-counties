@@ -98,6 +98,18 @@
           alertElement.remove();
         }
 
+        function updateTable(tableRow, countyName) {
+          console.log("Updating table...");
+          // Format the input to access the correct <td> element
+          let tableId = tableRow + "-td";
+          console.log("tableId: " + tableId);
+          // Get the table data element
+          let td = document.getElementById(tableId);
+          // Insert the county name into the table
+          td.textContent = countyName;
+
+        }
+
         function checkInput() {
             let attemptRaw = document.getElementById("textInput").value;
             console.log(attemptRaw);
@@ -117,6 +129,7 @@
                 let total = document.createTextNode(count.toString());
                 let textStr = "Total: " + total.toString() + "/100 guessed";
                 let textNode = document.createTextNode(textStr);
+                updateTable(attempt, attemptRaw);
                 document.getElementById("total").textContent = "Total: " + count + "/100 guessed";
             } else if (correctCounties.includes(attempt)) {
               console.log("ALREADY GUESSED"); 
@@ -237,315 +250,318 @@
         <th>Mountains</th>
       </tr>
       <tr>
-        <td id="alleghany"> </td>
+        <td id="alleghany-td"> </td>
     </tr>
     <tr>
-        <td id="ashe"> </td>
+        <td id="ashe-td"> </td>
     </tr>
     <tr>
-        <td id="avery"> </td>
+        <td id="avery-td"> </td>
     </tr>
     <tr>
-        <td id="buncombe"> </td>
+        <td id="buncombe-td"> </td>
     </tr>
     <tr>
-        <td id="burke"> </td>
+        <td id="burke-td"> </td>
     </tr>
     <tr>
-        <td id="caldwell"> </td>
+        <td id="caldwell-td"> </td>
     </tr>
     <tr>
-        <td id="cherokee"> </td>
+        <td id="cherokee-td"> </td>
     </tr>
     <tr>
-        <td id="clay"> </td>
+        <td id="clay-td"> </td>
     </tr>
     <tr>
-        <td id="graham"> </td>
+        <td id="graham-td"> </td>
     </tr>
     <tr>
-        <td id="haywood"> </td>
+        <td id="haywood-td"> </td>
     </tr>
     <tr>
-        <td id="henderson"> </td>
+        <td id="henderson-td"> </td>
     </tr>
     <tr>
-        <td id="jackson"> </td>
+        <td id="jackson-td"> </td>
     </tr>
     <tr>
-        <td id="macon"> </td>
+        <td id="macon-td"> </td>
     </tr>
     <tr>
-        <td id="madison"> </td>
+        <td id="madison-td"> </td>
     </tr>
     <tr>
-        <td id="mcdowell"> </td>
+        <td id="mcdowell-td"> </td>
     </tr>
     <tr>
-        <td id="mitchell"> </td>
+        <td id="mitchell-td"> </td>
     </tr>
     <tr>
-        <td id="polk"> </td>
+        <td id="polk-td"> </td>
     </tr>
     <tr>
-        <td id="rutherford"> </td>
+        <td id="rutherford-td"> </td>
     </tr>
     <tr>
-        <td id="swain"> </td>
+        <td id="swain-td"> </td>
     </tr>
     <tr>
-        <td id="transylvania"> </td>
+        <td id="transylvania-td"> </td>
     </tr>
     <tr>
-        <td id="watauga"> </td>
+        <td id="watauga-td"> </td>
     </tr>
     <tr>
-        <td id="wilkes"> </td>
+        <td id="wilkes-td"> </td>
     </tr>
     <tr>
-        <td id="yancey"> </td>
-    </tr>    
+        <td id="yancey-td"> </td>
+    </tr>
+    
     </table>
     <table id="piedmont-table">
       <tr>
         <th>Piedmont</th>
       </tr>
       <tr>
-        <td id="alamance"> </td>
+        <td id="alamance-td"> </td>
     </tr>
     <tr>
-        <td id="alexander"> </td>
+        <td id="alexander-td"> </td>
     </tr>
     <tr>
-        <td id="anson"> </td>
+        <td id="anson-td"> </td>
     </tr>
     <tr>
-        <td id="cabarrus"> </td>
+        <td id="cabarrus-td"> </td>
     </tr>
     <tr>
-        <td id="caswell"> </td>
+        <td id="caswell-td"> </td>
     </tr>
     <tr>
-        <td id="chatham"> </td>
+        <td id="chatham-td"> </td>
     </tr>
     <tr>
-        <td id="catawba"> </td>
+        <td id="catawba-td"> </td>
     </tr>
     <tr>
-        <td id="cleveland"> </td>
+        <td id="cleveland-td"> </td>
     </tr>
     <tr>
-        <td id="davidson"> </td>
+        <td id="davidson-td"> </td>
     </tr>
     <tr>
-        <td id="davie"> </td>
+        <td id="davie-td"> </td>
     </tr>
     <tr>
-        <td id="durham"> </td>
+        <td id="durham-td"> </td>
     </tr>
     <tr>
-        <td id="forsyth"> </td>
+        <td id="forsyth-td"> </td>
     </tr>
     <tr>
-        <td id="franklin"> </td>
+        <td id="franklin-td"> </td>
     </tr>
     <tr>
-        <td id="gaston"> </td>
+        <td id="gaston-td"> </td>
     </tr>
     <tr>
-        <td id="granville"> </td>
+        <td id="granville-td"> </td>
     </tr>
     <tr>
-        <td id="guilford"> </td>
+        <td id="guilford-td"> </td>
     </tr>
     <tr>
-        <td id="iredell"> </td>
+        <td id="iredell-td"> </td>
     </tr>
     <tr>
-        <td id="lee"> </td>
+        <td id="lee-td"> </td>
     </tr>
     <tr>
-        <td id="lincoln"> </td>
+        <td id="lincoln-td"> </td>
     </tr>
     <tr>
-        <td id="mecklenburg"> </td>
+        <td id="mecklenburg-td"> </td>
     </tr>
     <tr>
-        <td id="montgomery"> </td>
+        <td id="montgomery-td"> </td>
     </tr>
     <tr>
-        <td id="moore"> </td>
+        <td id="moore-td"> </td>
     </tr>
     <tr>
-        <td id="orange"> </td>
+        <td id="orange-td"> </td>
     </tr>
     <tr>
-        <td id="person"> </td>
+        <td id="person-td"> </td>
     </tr>
     <tr>
-        <td id="randolph"> </td>
+        <td id="randolph-td"> </td>
     </tr>
     <tr>
-        <td id="richmond"> </td>
+        <td id="richmond-td"> </td>
     </tr>
     <tr>
-        <td id="rockingham"> </td>
+        <td id="rockingham-td"> </td>
     </tr>
     <tr>
-        <td id="rowan"> </td>
+        <td id="rowan-td"> </td>
     </tr>
     <tr>
-        <td id="stanly"> </td>
+        <td id="stanly-td"> </td>
     </tr>
     <tr>
-        <td id="stokes"> </td>
+        <td id="stokes-td"> </td>
     </tr>
     <tr>
-        <td id="surry"> </td>
+        <td id="surry-td"> </td>
     </tr>
     <tr>
-        <td id="union"> </td>
+        <td id="union-td"> </td>
     </tr>
     <tr>
-        <td id="vance"> </td>
+        <td id="vance-td"> </td>
     </tr>
     <tr>
-        <td id="wake"> </td>
+        <td id="wake-td"> </td>
     </tr>
     <tr>
-        <td id="warren"> </td>
+        <td id="warren-td"> </td>
     </tr>
     <tr>
-        <td id="yadkin"> </td>
-    </tr>    
+        <td id="yadkin-td"> </td>
+    </tr>
+     
     </table>
     <table id="coastal-table">
     <tr>
       <th>Coastal Plain</th>
     </tr>
-      <tr>
-        <td id="beaufort"> </td>
-      </tr>
-      <tr>
-        <td id="bertie"> </td>
-      </tr>
-      <tr>
-        <td id="bladen"> </td>
-      </tr>
-      <tr>
-          <td id="brunswick"> </td>
-      </tr>
-      <tr>
-          <td id="camden"> </td>
-      </tr>
-      <tr>
-          <td id="carteret"> </td>
-      </tr>
-      <tr>
-          <td id="chowan"> </td>
-      </tr>
-      <tr>
-          <td id="columbus"> </td>
-      </tr>
-      <tr>
-          <td id="craven"> </td>
-      </tr>
-      <tr>
-          <td id="cumberland"> </td>
-      </tr>
-      <tr>
-          <td id="currituck"> </td>
-      </tr>
-      <tr>
-          <td id="dare"> </td>
-      </tr>
-      <tr>
-          <td id="duplin"> </td>
-      </tr>
-      <tr>
-          <td id="edgecombe"> </td>
-      </tr>
-      <tr>
-          <td id="gates"> </td>
-      </tr>
-      <tr>
-          <td id="greene"> </td>
-      </tr>
-      <tr>
-          <td id="halifax"> </td>
-      </tr>
-      <tr>
-          <td id="harnett"> </td>
-      </tr>
-      <tr>
-          <td id="hertford"> </td>
-      </tr>
-      <tr>
-          <td id="hoke"> </td>
-      </tr>
-      <tr>
-          <td id="hyde"> </td>
-      </tr>
-      <tr>
-          <td id="johnston"> </td>
-      </tr>
-      <tr>
-          <td id="jones"> </td>
-      </tr>
-      <tr>
-          <td id="lenoir"> </td>
-      </tr>
-      <tr>
-          <td id="martin"> </td>
-      </tr>
-      <tr>
-          <td id="nash"> </td>
-      </tr>
-      <tr>
-          <td id="new_hanover"> </td>
-      </tr>
-      <tr>
-          <td id="northampton"> </td>
-      </tr>
-      <tr>
-          <td id="onslow"> </td>
-      </tr>
-      <tr>
-          <td id="pamlico"> </td>
-      </tr>
-      <tr>
-          <td id="pasquotank"> </td>
-      </tr>
-      <tr>
-          <td id="pender"> </td>
-      </tr>
-      <tr>
-          <td id="perquimans"> </td>
-      </tr>
-      <tr>
-          <td id="pitt"> </td>
-      </tr>
-      <tr>
-          <td id="robeson"> </td>
-      </tr>
-      <tr>
-          <td id="sampson"> </td>
-      </tr>
-      <tr>
-          <td id="scotland"> </td>
-      </tr>
-      <tr>
-          <td id="tyrrell"> </td>
-      </tr>
-      <tr>
-          <td id="washington"> </td>
-      </tr>
-      <tr>
-          <td id="wayne"> </td>
-      </tr>
-      <tr>
-          <td id="wilson"> </td>
-      </tr>  
+    <tr>
+      <td id="beaufort-td"> </td>
+  </tr>
+  <tr>
+      <td id="bertie-td"> </td>
+  </tr>
+  <tr>
+      <td id="bladen-td"> </td>
+  </tr>
+  <tr>
+      <td id="brunswick-td"> </td>
+  </tr>
+  <tr>
+      <td id="camden-td"> </td>
+  </tr>
+  <tr>
+      <td id="carteret-td"> </td>
+  </tr>
+  <tr>
+      <td id="chowan-td"> </td>
+  </tr>
+  <tr>
+      <td id="columbus-td"> </td>
+  </tr>
+  <tr>
+      <td id="craven-td"> </td>
+  </tr>
+  <tr>
+      <td id="cumberland-td"> </td>
+  </tr>
+  <tr>
+      <td id="currituck-td"> </td>
+  </tr>
+  <tr>
+      <td id="dare-td"> </td>
+  </tr>
+  <tr>
+      <td id="duplin-td"> </td>
+  </tr>
+  <tr>
+      <td id="edgecombe-td"> </td>
+  </tr>
+  <tr>
+      <td id="gates-td"> </td>
+  </tr>
+  <tr>
+      <td id="greene-td"> </td>
+  </tr>
+  <tr>
+      <td id="halifax-td"> </td>
+  </tr>
+  <tr>
+      <td id="harnett-td"> </td>
+  </tr>
+  <tr>
+      <td id="hertford-td"> </td>
+  </tr>
+  <tr>
+      <td id="hoke-td"> </td>
+  </tr>
+  <tr>
+      <td id="hyde-td"> </td>
+  </tr>
+  <tr>
+      <td id="johnston-td"> </td>
+  </tr>
+  <tr>
+      <td id="jones-td"> </td>
+  </tr>
+  <tr>
+      <td id="lenoir-td"> </td>
+  </tr>
+  <tr>
+      <td id="martin-td"> </td>
+  </tr>
+  <tr>
+      <td id="nash-td"> </td>
+  </tr>
+  <tr>
+      <td id="new_hanover-td"> </td>
+  </tr>
+  <tr>
+      <td id="northampton-td"> </td>
+  </tr>
+  <tr>
+      <td id="onslow-td"> </td>
+  </tr>
+  <tr>
+      <td id="pamlico-td"> </td>
+  </tr>
+  <tr>
+      <td id="pasquotank-td"> </td>
+  </tr>
+  <tr>
+      <td id="pender-td"> </td>
+  </tr>
+  <tr>
+      <td id="perquimans-td"> </td>
+  </tr>
+  <tr>
+      <td id="pitt-td"> </td>
+  </tr>
+  <tr>
+      <td id="robeson-td"> </td>
+  </tr>
+  <tr>
+      <td id="sampson-td"> </td>
+  </tr>
+  <tr>
+      <td id="scotland-td"> </td>
+  </tr>
+  <tr>
+      <td id="tyrrell-td"> </td>
+  </tr>
+  <tr>
+      <td id="washington-td"> </td>
+  </tr>
+  <tr>
+      <td id="wayne-td"> </td>
+  </tr>
+  <tr>
+      <td id="wilson-td"> </td>
+  </tr>
+  
     </table>
   </div>
   </main>
