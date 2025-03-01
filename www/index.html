@@ -104,7 +104,7 @@
           alertElement.remove();
         }
 
-        function updateTable(tableRow) {
+        function updateTable(tableRow, answer) {
           console.log("Updating table... ");
           // check for new hanover county edge case (only county with a space in the name)
           if (tableRow !== "new hanover") {
@@ -117,6 +117,12 @@
             let countyName = capFirst(tableRow)
             // Insert the county name into the table
             td.textContent = countyName;
+
+            // Assign class for styling incorrect answers
+            if (answer == false) {
+              td.setAttribute("class", "missed")
+            }
+
           } else {
             // modify input for New Hanover
             tableRow = "new_hanover"
@@ -129,6 +135,11 @@
             let countyName = newHavor = "New Hanover"
             // Insert the county name into the table
             td.textContent = countyName;
+
+            // Assign class for styling incorrect answers
+            if (answer == false) {
+              td.setAttribute("class", "missed")
+            }
           }
           
 
@@ -136,7 +147,7 @@
 
         function insertMissed() {
           for (let i = 0; i <= mutableCounites.length; i += 1) {
-            updateTable(mutableCounites[i]);
+            updateTable(mutableCounites[i], false);
           }
         }
 

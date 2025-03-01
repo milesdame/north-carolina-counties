@@ -115,3 +115,8 @@ table, th, tr {
     font-family: "Roboto", serif;
     font-weight: 400;
 }
+
+.missed {
+    color: #CC0000;
+    font-weight: 400;
+}
