@@ -9,12 +9,15 @@
     <link id="theme-style" rel="stylesheet" href="static/css/nc-state-theme.css">
     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="static/js/timer.js" defer></script>
+    <!-- <script src="static/js/timer.js" defer></script> -->
+    <script src="static/js/utils.js" defer></script>
 
     <script>  
       let playerEntries = [];
       let count = 0;
-      const counties = ["nash", "clay", "mecklenburg", "pitt", "anson", "carteret", "sampson", "northampton", "currituck", "jones", "harnett", "franklin", "caswell", "mitchell", "craven", "dare", "columbus", "mcdowell", "hyde", "edgecombe", "lenoir", "madison", "pender", "greene", "jackson", "polk", "davie", "rowan", "martin", "macon", "cherokee", "rutherford", "yancey", "halifax", "moore", "burke", "onslow", "bertie", "pamlico", "montgomery", "wilkes", "ashe", "brunswick", "surry", "cumberland", "buncombe", "pasquotank", "camden", "robeson", "swain", "hoke", "hertford", "caldwell", "new hanover", "wake", "beaufort", "stanly", "davidson", "bladen", "haywood", "johnston", "henderson", "richmond", "scotland", "tyrrell", "guilford", "wilson", "cabarrus", "chatham", "gates", "person", "orange", "lee", "cleveland", "watauga", "durham", "stokes", "wayne", "granville", "alexander", "lincoln", "alleghany", "duplin", "washington", "union", "gaston", "forsyth", "warren", "avery", "catawba", "iredell", "yadkin", "chowan", "rockingham", "transylvania", "graham", "vance", "alamance", "randolph", "perquimans"];
+      const counties = ["alamance", "alexander", "alleghany", "anson", "ashe", "avery", "beaufort", "bertie", "bladen", "brunswick", "buncombe", "burke", "cabarrus", "caldwell", "camden", "carteret", "caswell", "catawba", "chatham", "cherokee", "chowan", "clay", "cleveland", "columbus", "craven", "cumberland", "currituck", "dare", "davidson", "davie", "duplin", "durham", "edgecombe", "franklin", "forsyth", "gaston", "gates", "graham", "granville", "greene", "guilford", "halifax", "harnett", "haywood", "henderson", "hertford", "hoke", "hyde", "iredell", "jackson", "johnston", "jones", "lee", "lenoir", "lincoln", "macon", "madison", "martin", "mcdowell", "mecklenburg", "mitchell", "moore", "montgomery", "nash", "new hanover", "northampton", "onslow", "orange", "pamlico", "pasquotank", "pender", "perquimans", "person", "pitt", "polk", "randolph", "richmond", "robeson", "rockingham", "rowan", "rutherford", "sampson", "scotland", "stanly", "stokes", "surry", "swain", "transylvania", "tyrrell", "union", "vance", "wake", "warren", "washington", "watauga", "wayne", "wilkes", "wilson", "yadkin", "yancey"];
+      let mutableCounites = ["alamance", "alexander", "alleghany", "anson", "ashe", "avery", "beaufort", "bertie", "bladen", "brunswick", "buncombe", "burke", "cabarrus", "caldwell", "camden", "carteret", "caswell", "catawba", "chatham", "cherokee", "chowan", "clay", "cleveland", "columbus", "craven", "cumberland", "currituck", "dare", "davidson", "davie", "duplin", "durham", "edgecombe", "franklin", "forsyth", "gaston", "gates", "graham", "granville", "greene", "guilford", "halifax", "harnett", "haywood", "henderson", "hertford", "hoke", "hyde", "iredell", "jackson", "johnston", "jones", "lee", "lenoir", "lincoln", "macon", "madison", "martin", "mcdowell", "mecklenburg", "mitchell", "moore", "montgomery", "nash", "new hanover", "northampton", "onslow", "orange", "pamlico", "pasquotank", "pender", "perquimans", "person", "pitt", "polk", "randolph", "richmond", "robeson", "rockingham", "rowan", "rutherford", "sampson", "scotland", "stanly", "stokes", "surry", "swain", "transylvania", "tyrrell", "union", "vance", "wake", "warren", "washington", "watauga", "wayne", "wilkes", "wilson", "yadkin", "yancey"];
+
       let correctCounties = []; 
 
       /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
@@ -79,6 +82,8 @@
       }
     </script>
 
+  
+
 
     <script>
         
@@ -87,7 +92,8 @@
           console.log("MAKING IT HERE");
           let paragraph = document.createElement("p");
           paragraph.setAttribute("id", "alert");
-          paragraph.textContent = " Already Guessed " + guess + "!";
+          // Format the guess text for the alert and add it
+          paragraph.textContent = " Already guessed " + capFirst(guess) + "!";
           paragraph.setAttribute("class", "already-guessed");
           document.getElementById("alertZone").appendChild(paragraph);
           setTimeout(clearAlert, 1000);
@@ -98,22 +104,47 @@
           alertElement.remove();
         }
 
-        function updateTable(tableRow, countyName) {
-          console.log("Updating table...");
-          // Format the input to access the correct <td> element
-          let tableId = tableRow + "-td";
-          console.log("tableId: " + tableId);
-          // Get the table data element
-          let td = document.getElementById(tableId);
-          // Insert the county name into the table
-          td.textContent = countyName;
+        function updateTable(tableRow) {
+          console.log("Updating table... ");
+          // check for new hanover county edge case (only county with a space in the name)
+          if (tableRow !== "new hanover") {
+            // Format the input to access the correct <td> element
+            let tableId = tableRow + "-td";
+            console.log("tableId: " + tableId);
+            // Get the table data element
+            let td = document.getElementById(tableId);
+            // Format the county name from the input
+            let countyName = capFirst(tableRow)
+            // Insert the county name into the table
+            td.textContent = countyName;
+          } else {
+            // modify input for New Hanover
+            tableRow = "new_hanover"
+            // Format the input to access the correct <td> element
+            let tableId = tableRow + "-td";
+            console.log("tableId: " + tableId);
+            // Get the table data element
+            let td = document.getElementById(tableId);
+            // Format the county name from the input
+            let countyName = newHavor = "New Hanover"
+            // Insert the county name into the table
+            td.textContent = countyName;
+          }
+          
 
+        }
+
+        function insertMissed() {
+          for (let i = 0; i <= mutableCounites.length; i += 1) {
+            updateTable(mutableCounites[i]);
+          }
         }
 
         function checkInput() {
             let attemptRaw = document.getElementById("textInput").value;
             console.log(attemptRaw);
             let attempt = attemptRaw.toLowerCase();
+            console.log("attemptRaw: " + attemptRaw);
         // each time the user types check the input value against the county list
             if (counties.includes(attempt) && !correctCounties.includes(attempt)) {
                 console.log("YES");
@@ -129,7 +160,22 @@
                 let total = document.createTextNode(count.toString());
                 let textStr = "Total: " + total.toString() + "/100 guessed";
                 let textNode = document.createTextNode(textStr);
-                updateTable(attempt, attemptRaw);
+
+                /*// check for new hanover county
+                if (attempt == "new hanover") {
+                  attempt = "new_hanover"
+                }
+                console.log("attempt after NH if: " + attempt)
+                */
+
+                // Remove the correct guess from the counties array
+                let correctIndex = mutableCounites.indexOf(attempt);
+                mutableCounites.splice(correctIndex, 1);
+                //console.log("Mutable Counties: " + mutableCounites);
+
+                // Update the table with the correct guess
+                //console.log("attempt before table UPDATE: " + attempt)
+                updateTable(attempt);
                 document.getElementById("total").textContent = "Total: " + count + "/100 guessed";
             } else if (correctCounties.includes(attempt)) {
               console.log("ALREADY GUESSED"); 
@@ -138,6 +184,46 @@
             }
         }
     </script>
+
+<script>
+  function timer () {
+// Set the date we're counting down to
+//var countDownDate = Date.now() + 480000;
+
+// Testing timer short
+//var countDownDate = Date.now() + 50000;
+
+// Testing timer almost immediate
+var countDownDate = Date.now() + 20000;
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+// Get today's date and time
+var now = new Date().getTime();
+
+// Find the distance between now and the count down date
+var distance = countDownDate - now;
+
+// Time calculations for days, hours, minutes and seconds
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+// Output the result in an element with id="demo"
+document.getElementById("demo").innerHTML = minutes + "m " + ": " + seconds + "s ";
+
+// If the count down is over, write some text 
+if (distance < 0) {
+clearInterval(x);
+document.getElementById("demo").innerHTML = "Time's Up!";
+insertMissed();
+document.getElementById("textInput").disabled = true;
+}
+}, 1000);
+}
+
+</script>
+
     <section id="map">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny" width="810" height="316" viewBox="0 0 810 316" stroke-linecap="round" stroke-linejoin="round">
             <g id="North Carolina" transform="translate(5,5)" stroke="white" stroke-width="1">
