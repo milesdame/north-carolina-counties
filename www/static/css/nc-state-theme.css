@@ -120,3 +120,29 @@ table, th, tr {
     color: #CC0000;
     font-weight: 400;
 }
+
+/* Add a background to dropdown links on hover */
+.topnav a {
+    font-family: "Roboto Slab", serif;
+}
+
+.dropdown .dropbtn {
+    font-family: "Roboto Slab", serif;
+}
+
+.dropdown .dropdown-content a:hover {
+background-color: #FAC800;
+color: #FFFFFF;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+background-color: #990000;
+color: #FFFFFF;
+}
+
+/* Add a dark background on topnav links and the dropdown button on hover */
+.topnav a:hover, .dropdown:hover .dropbtn {
+background-color: #5B5B66;
+color: #FFFFFF;
+}
