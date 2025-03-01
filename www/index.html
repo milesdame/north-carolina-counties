@@ -21,6 +21,7 @@
       let correctCounties = []; 
 
       /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+      /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
       function myFunction() {
         var x = document.getElementById("myTopnav");
         if (x.className === "topnav") {
@@ -33,16 +34,52 @@
   </head>
   <body id="main">
     <header>
+      <nav class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">News</a>
+        <a href="contact.html">Contact</a>
+        <div class="dropdown">
+          <button class="dropbtn">Theme
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">NC State</a>
+            <a href="#">UNC Greensboro</a>
+            <a href="#">UNC Chapel Hill</a>
+            <a href="#">Duke</a>
+            <a href="#">Western Carolina</a>
+            <a href="#">Appalachian</a>
+            <a href="#">A-B Tech</a>
+            <a href="#">Mountain</a>
+            <a href="#">Coastal</a>
+            <a href="#">Piedmont</a>
+          </div>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </nav> 
+    
+      <!--
+      
     <nav class="topnav" id="myTopnav">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="scores.html">Scores</a></li>
+        <div class="dropdown">
+          <button class="dropbtn">Dropdown
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
         </a>
       </ul>
-    </nav>
+    </nav>-->
   </header>
   <main>
     <h1>North Carolina Counties Quiz</h1>
@@ -199,13 +236,13 @@
 <script>
   function timer () {
 // Set the date we're counting down to
-//var countDownDate = Date.now() + 480000;
+var countDownDate = Date.now() + 480000;
 
 // Testing timer short
 //var countDownDate = Date.now() + 50000;
 
 // Testing timer almost immediate
-var countDownDate = Date.now() + 20000;
+//var countDownDate = Date.now() + 20000;
 
 // Update the count down every 1 second
 var x = setInterval(function() {
