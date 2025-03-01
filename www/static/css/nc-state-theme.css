@@ -100,12 +100,18 @@ footer p {
 input::placeholder {
     font-family: "Roboto Slab", serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 500;
     font-style: normal;
-    color:#000000;
+    color: #5B5B66;
 }
 
 .already-guessed {
     color: #CC0000;
-    text-decoration: underline;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+}
+
+table, th, tr {
+    font-family: "Roboto", serif;
+    font-weight: 400;
 }

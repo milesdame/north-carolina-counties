@@ -197,6 +197,7 @@ table, th, td {
     border: 2px solid black;
     border-collapse: collapse;
     height: fit-content;
+    text-align: center;
 }
 
 tr, th {
@@ -210,9 +211,6 @@ tr, th {
 
 #alert {
     animation: fadeIn 0.7s ease-out;
-    font-weight: 500;
-    text-decoration: none;
-    font-family: ;
 }
 
 @keyframes fadeOut {
