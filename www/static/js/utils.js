@@ -7,7 +7,17 @@ function capFirst(word) {
 
     return capitalized;
 }
+/*
+// Function for changing the theme
+function changeTheme(theme) {
+    // Update the theme in session storage
+    sessionStorage.setItem("theme", theme);
 
-function removeCorrect() {
-    
+    // Update the theme link in the head
+    // Create theme url
+    let themePath = "static/css/" + theme;
+    let themeLink = Document.getElementById("theme-style");
+    themeLink.setAttribute("href", themePath);
+    return true; 
 }
+*/
