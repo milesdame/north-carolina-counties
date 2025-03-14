@@ -116,6 +116,13 @@ table, th, tr {
     font-weight: 400;
 }
 
+th {
+    font-family: "Roboto", serif;
+    font-weight: 600;
+    background-color: #990000;
+    color: #FFFFFF;
+}
+
 .missed {
     color: #CC0000;
     font-weight: 400;

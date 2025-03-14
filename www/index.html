@@ -6,19 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NC Counties Quiz</title>
     <link rel="stylesheet" href="static/css/style.css">
-    <link id="theme-style" rel="stylesheet" href="static/css/nc-state-theme.css">
+    <link id="theme-style" rel="stylesheet" href="static/css/uncg-theme.css">
     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <script src="static/js/timer.js" defer></script> -->
     <script src="static/js/utils.js" defer></script>
 
     <script>  
-      let playerEntries = [];
-      let count = 0;
-      const counties = ["alamance", "alexander", "alleghany", "anson", "ashe", "avery", "beaufort", "bertie", "bladen", "brunswick", "buncombe", "burke", "cabarrus", "caldwell", "camden", "carteret", "caswell", "catawba", "chatham", "cherokee", "chowan", "clay", "cleveland", "columbus", "craven", "cumberland", "currituck", "dare", "davidson", "davie", "duplin", "durham", "edgecombe", "franklin", "forsyth", "gaston", "gates", "graham", "granville", "greene", "guilford", "halifax", "harnett", "haywood", "henderson", "hertford", "hoke", "hyde", "iredell", "jackson", "johnston", "jones", "lee", "lenoir", "lincoln", "macon", "madison", "martin", "mcdowell", "mecklenburg", "mitchell", "moore", "montgomery", "nash", "new hanover", "northampton", "onslow", "orange", "pamlico", "pasquotank", "pender", "perquimans", "person", "pitt", "polk", "randolph", "richmond", "robeson", "rockingham", "rowan", "rutherford", "sampson", "scotland", "stanly", "stokes", "surry", "swain", "transylvania", "tyrrell", "union", "vance", "wake", "warren", "washington", "watauga", "wayne", "wilkes", "wilson", "yadkin", "yancey"];
-      let mutableCounites = ["alamance", "alexander", "alleghany", "anson", "ashe", "avery", "beaufort", "bertie", "bladen", "brunswick", "buncombe", "burke", "cabarrus", "caldwell", "camden", "carteret", "caswell", "catawba", "chatham", "cherokee", "chowan", "clay", "cleveland", "columbus", "craven", "cumberland", "currituck", "dare", "davidson", "davie", "duplin", "durham", "edgecombe", "franklin", "forsyth", "gaston", "gates", "graham", "granville", "greene", "guilford", "halifax", "harnett", "haywood", "henderson", "hertford", "hoke", "hyde", "iredell", "jackson", "johnston", "jones", "lee", "lenoir", "lincoln", "macon", "madison", "martin", "mcdowell", "mecklenburg", "mitchell", "moore", "montgomery", "nash", "new hanover", "northampton", "onslow", "orange", "pamlico", "pasquotank", "pender", "perquimans", "person", "pitt", "polk", "randolph", "richmond", "robeson", "rockingham", "rowan", "rutherford", "sampson", "scotland", "stanly", "stokes", "surry", "swain", "transylvania", "tyrrell", "union", "vance", "wake", "warren", "washington", "watauga", "wayne", "wilkes", "wilson", "yadkin", "yancey"];
+        let playerEntries = [];
+        let count = 0;
+        const counties = ["alamance", "alexander", "alleghany", "anson", "ashe", "avery", "beaufort", "bertie", "bladen", "brunswick", "buncombe", "burke", "cabarrus", "caldwell", "camden", "carteret", "caswell", "catawba", "chatham", "cherokee", "chowan", "clay", "cleveland", "columbus", "craven", "cumberland", "currituck", "dare", "davidson", "davie", "duplin", "durham", "edgecombe", "franklin", "forsyth", "gaston", "gates", "graham", "granville", "greene", "guilford", "halifax", "harnett", "haywood", "henderson", "hertford", "hoke", "hyde", "iredell", "jackson", "johnston", "jones", "lee", "lenoir", "lincoln", "macon", "madison", "martin", "mcdowell", "mecklenburg", "mitchell", "moore", "montgomery", "nash", "new hanover", "northampton", "onslow", "orange", "pamlico", "pasquotank", "pender", "perquimans", "person", "pitt", "polk", "randolph", "richmond", "robeson", "rockingham", "rowan", "rutherford", "sampson", "scotland", "stanly", "stokes", "surry", "swain", "transylvania", "tyrrell", "union", "vance", "wake", "warren", "washington", "watauga", "wayne", "wilkes", "wilson", "yadkin", "yancey"];
+        let mutableCounites = ["alamance", "alexander", "alleghany", "anson", "ashe", "avery", "beaufort", "bertie", "bladen", "brunswick", "buncombe", "burke", "cabarrus", "caldwell", "camden", "carteret", "caswell", "catawba", "chatham", "cherokee", "chowan", "clay", "cleveland", "columbus", "craven", "cumberland", "currituck", "dare", "davidson", "davie", "duplin", "durham", "edgecombe", "franklin", "forsyth", "gaston", "gates", "graham", "granville", "greene", "guilford", "halifax", "harnett", "haywood", "henderson", "hertford", "hoke", "hyde", "iredell", "jackson", "johnston", "jones", "lee", "lenoir", "lincoln", "macon", "madison", "martin", "mcdowell", "mecklenburg", "mitchell", "moore", "montgomery", "nash", "new hanover", "northampton", "onslow", "orange", "pamlico", "pasquotank", "pender", "perquimans", "person", "pitt", "polk", "randolph", "richmond", "robeson", "rockingham", "rowan", "rutherford", "sampson", "scotland", "stanly", "stokes", "surry", "swain", "transylvania", "tyrrell", "union", "vance", "wake", "warren", "washington", "watauga", "wayne", "wilkes", "wilson", "yadkin", "yancey"];
 
-      let correctCounties = []; 
+        let correctCounties = []; 
+
+        let mountainCount = 0;
+        let piedmontCount = 0;
+        let coastalCount = 0;
+
+
+        const mountainRegion = ["alleghany", "ashe", "avery", "buncombe", "burke", "caldwell", "cherokee", "clay", "graham", "haywood", "henderson", "jackson", "macon", "madison", "mcdowell", "mitchell", "polk", "rutherford", "swain", "transylvania", "watauga", "wilkes", "yancey"];
+
+        const piedmontRegion = ["alamance", "alexander", "anson", "cabarrus", "caswell", "chatham", "catawba", "cleveland", "davidson", "davie", "durham", "forsyth", "franklin", "gaston", "granville", "guilford", "iredell", "lee", "lincoln", "mecklenburg", "montgomery", "moore", "orange", "person", "randolph", "richmond", "rockingham", "rowan", "stanly", "stokes", "surry", "union", "vance", "wake", "warren", "yadkin"];
+
+        const coastalRegion = ["beaufort", "bertie", "bladen", "brunswick", "camden", "carteret", "chowan", "columbus", "craven", "cumberland", "currituck", "dare", "duplin", "edgecombe", "gates", "greene", "halifax", "harnett", "hertford", "hoke", "hyde", "johnston", "jones", "lenoir", "martin", "nash", "new hanover", "northampton", "onslow", "pamlico", "pasquotank", "pender", "perquimans", "pitt", "robeson", "sampson", "scotland", "tyrrell", "washington", "wayne", "wilson"];
+
+
+        let mountainCorrect = [];
+
+        let piedmontCorrect = [];
+
+        let coastalCorrect = [];
+
+        /*
+        * Function for updating the theme
+        * Takes in the theme path and updates the stylesheet
+        */
+        function setTheme(theme) {
+            let styleSheet = document.getElementById("theme-style");
+            styleSheet.setAttribute("href", theme);
+        }
 
       /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
       /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
@@ -43,8 +70,8 @@
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a class="dropdown-a" href="#">NC State</a>
-            <a class="dropdown-a" href="#">UNC Greensboro</a>
+            <a class="dropdown-a" href="javascript:setTheme('static/css/nc-state-theme.css')">NC State</a>
+            <a class="dropdown-a" href="javascript:setTheme('static/css/uncg-theme.css')" >UNC Greensboro</a>
             <a class="dropdown-a" href="#">UNC Chapel Hill</a>
             <a class="dropdown-a" href="#">Duke</a>
             <a class="dropdown-a" href="#">Western Carolina</a>
@@ -114,7 +141,8 @@
         input.setAttribute('autocomplete', "off");
         input.setAttribute("onkeydown", "if(event.keyCode === 13) { return false; }");
         document.querySelector("form").appendChild(input);
-        document.querySelector("button").remove();
+        document.getElementById("startbtn").remove();
+        //document.querySelector("button").remove();
         document.getElementById("total").textContent = count + "/100 guessed";
       }
     </script>
@@ -189,42 +217,80 @@
         }
 
         function checkInput() {
+            // Get the raw input from the user 
             let attemptRaw = document.getElementById("textInput").value;
             console.log(attemptRaw);
+            // standardize it by making everything lowercase 
             let attempt = attemptRaw.toLowerCase();
             console.log("attemptRaw: " + attemptRaw);
+
         // each time the user types check the input value against the county list
             if (counties.includes(attempt) && !correctCounties.includes(attempt)) {
-                console.log("YES");
+                // If they guess a county that they've not already correctly guessed
+                // Push that county onto the list of correct guesses
                 correctCounties.push(attempt);
+                // Increment the player's total correct guesses
                 count++;
+
+                // NOT SURE WHAT THIS DOES. Remove?
                 playerEntries.push(attempt)
+
+                // Reset the text input to blank
                 document.getElementById("textInput").value = '';
-                console.log(count);
-                console.log(count.toString());
+
+                // Update the map by applying the style for correct guesses to the county
                 let element = document.getElementById(attempt);
                 let classes = element.classList;
                 classes.add("correct");
+
+                // Update the text under the input with the user's total
                 let total = document.createTextNode(count.toString());
                 let textStr = "Total: " + total.toString() + "/100 guessed";
                 let textNode = document.createTextNode(textStr);
 
-                /*// check for new hanover county
-                if (attempt == "new hanover") {
-                  attempt = "new_hanover"
-                }
-                console.log("attempt after NH if: " + attempt)
-                */
+                // See if user's correct guess is in a given region and not already 
+                // in the array of correct guesses for that region. 
+                if (mountainRegion.includes(attempt) && !mountainCorrect.includes(attempt)) {
+                console.log("INSIDE");
+                // -Add the county to the correct guesses for that region
+                    mountainCorrect.push(attempt);
+                // -Increment to total correct for that region
+                    mountainCount += 1;
+                    let mountainTH = document.getElementById("mountainScore");
+                    mountainTH.innerHTML = "Mountain: " + mountainCount + "/23"
+                    console.log("Mountain: " + mountainCount);
+                // -Update the UI with the new regional total
+                } else if (piedmontRegion.includes(attempt) && !piedmontCorrect.includes(attempt)) {
+                // -Add the county to the correct guesses for that region
+                    piedmontCorrect.push(attempt);
+                // -Increment to total correct for that region
+                    piedmontCount += 1;
+                    let piedmontTH = document.getElementById("piedmontScore");
+                    piedmontTH.innerHTML = "Piedmont: " + piedmontCount + "/36"
+                    console.log("Piedmont: " + piedmontCount)
+
+                    
+                // -Update the UI with the new regional total
+                } else if (coastalRegion.includes(attempt) && !coastalCorrect.includes(attempt)) {
+                // -Add the county to the correct guesses for that region
+                    coastalCorrect.push(attempt)
+                // -Increment to total correct for that region
+                    coastalCount += 1;
+                    let coastalTH = document.getElementById("coastalScore");
+                    coastalTH.innerHTML = "Coastal Plains: " + coastalCount + "/41"
+                    console.log("Costal: " + coastalCount);
+                // -Update the UI with the new regional total
+                }   
 
                 // Remove the correct guess from the counties array
                 let correctIndex = mutableCounites.indexOf(attempt);
                 mutableCounites.splice(correctIndex, 1);
-                //console.log("Mutable Counties: " + mutableCounites);
 
                 // Update the table with the correct guess
-                //console.log("attempt before table UPDATE: " + attempt)
                 updateTable(attempt);
                 document.getElementById("total").textContent = "Total: " + count + "/100 guessed";
+            
+            // If user has already correctly guessed a county display a message saying as much
             } else if (correctCounties.includes(attempt)) {
               console.log("ALREADY GUESSED"); 
               alreadyGuessed(attempt);
@@ -381,7 +447,7 @@ document.getElementById("textInput").disabled = true;
   <div id="table-container">
     <table id="mountain-table">
       <tr>
-        <th>Mountains</th>
+        <th id="mountainScore">Mountains 0/23</th>
       </tr>
       <tr>
         <td id="alleghany-td"> </td>
@@ -456,7 +522,7 @@ document.getElementById("textInput").disabled = true;
     </table>
     <table id="piedmont-table">
       <tr>
-        <th>Piedmont</th>
+        <th id="piedmontScore">Piedmont 0/36</th>
       </tr>
       <tr>
         <td id="alamance-td"> </td>
@@ -570,7 +636,7 @@ document.getElementById("textInput").disabled = true;
     </table>
     <table id="coastal-table">
     <tr>
-      <th>Coastal Plain</th>
+      <th id="coastalScore">Coastal Plains 0/41</th>
     </tr>
     <tr>
       <td id="beaufort-td"> </td>

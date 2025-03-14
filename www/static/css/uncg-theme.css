@@ -1,0 +1,169 @@
+/* This is the default theme that loads on the website and serves as the base for all other themes */
+
+/* Font Import */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* COLORS 
+Black: #000000
+White: #FFFFFF 
+Gold: #ffb71b
+Blue: #0f2044
+Grey: #bec0c2
+Dark Grey: #a6b0b7 
+Cool Grey: #e5e6e4
+Dark Brown: #a59c87 
+Light Brown: #c5c29b 
+Green: #92d1b3 
+Blue Green: #4fc2bf 
+Blue: #00698c 
+Red: #a00c30 
+*/
+
+body {
+    background-color: #e5e6e4;
+}
+
+h1 {
+    color: #0f2044;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p {
+    color: #000000;
+}
+
+footer {
+    background-color: #0f2044;
+}
+
+/* Map Styles */
+path {
+    fill: #0f2044;
+    stroke: #e5e6e4;
+}
+
+.correct {
+    fill: #ffb71b;  
+}    
+
+/* Navigation Styles */
+
+ /* Add background color to the top navigation */
+.topnav {
+    background-color: #0f2044;
+}
+
+/* Style the links inside the navigation bar */
+.topnav ul li a {
+    color: #FFFFFF;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+background-color: #000000;
+color: #FFFFFF;
+}
+
+/* Add an active class to highlight the current page */
+.topnav li a.active {
+background-color: #002868;
+color: #FFCA00;
+}
+
+#startbtn {
+    background-color: #0f2044;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 32px;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+footer p {
+    color:#FFFFFF;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+#progress p {
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: medium;
+}
+
+input::placeholder {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #e5e6e4;
+}
+
+.already-guessed {
+    color: #a00c30;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+}
+
+table, th, tr {
+    font-family: "Roboto", serif;
+    font-weight: 400;
+}
+
+th {
+    font-family: "Roboto", serif;
+    font-weight: 600;
+    background-color: #0f2044;
+    color: #ffb71b;
+}
+
+.missed {
+    color: #a00c30;
+    font-weight: 400;
+}
+
+.topnav .nav-link {
+    font-family: "Roboto Slab", serif;
+    background-color: #0f2044;
+}
+
+.topnav a {
+    font-family: "Roboto Slab", serif;
+    background-color: #FFFFFF;
+}
+
+.dropdown .dropbtn {
+    font-family: "Roboto Slab", serif;
+}
+
+.dropdown .dropdown-content a:hover {
+background-color: #ffb71b;
+color: #0f2044;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+background-color: #a59c87;
+color: #FFFFFF;
+}
+
+/* Add a dark background on topnav links and the dropdown button on hover */
+.topnav a:hover, .dropdown:hover .dropbtn {
+background-color: #ffb71b;
+color: #FFFFFF;
+}

@@ -1,7 +1,8 @@
 /* Map Styles */
 
-.county path:hover {
+path:hover {
 stroke-width: 3px;
+fill: green;
 transition: fill 0.2s;
 }    
 
@@ -94,6 +95,9 @@ footer {
 #player-controls {
     display: flex;
     flex-direction: column;
+    position: sticky;
+    top: 0;
+    background-color: inherit;
 }
 
 #progress {
