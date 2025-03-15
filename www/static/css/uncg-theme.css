@@ -4,6 +4,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 /* COLORS 
 Black: #000000
 White: #FFFFFF 
@@ -26,9 +29,9 @@ body {
 
 h1 {
     color: #0f2044;
-    font-family: "Roboto Slab", serif;
+    font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 800;
     font-style: normal;
 }
 
@@ -60,9 +63,9 @@ path {
 /* Style the links inside the navigation bar */
 .topnav ul li a {
     color: #FFFFFF;
-    font-family: "Roboto Slab", serif;
+    font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 300;
+    font-weight: 500;
     font-style: normal;
 }
 
@@ -71,6 +74,12 @@ path {
 background-color: #000000;
 color: #FFFFFF;
 }
+
+@media screen and (max-width: 600px) {
+    .topnav a.icon {
+      background-color: #ffb71b;
+    }
+  }
 
 /* Add an active class to highlight the current page */
 .topnav li a.active {
@@ -84,10 +93,10 @@ color: #FFCA00;
     border: none;
     border-radius: 5px;
     padding: 12px 32px;
-    font-family: "Roboto Slab", serif;
-    font-optical-sizing: auto;
+    font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-style: normal;
+
 }
 
 footer p {
@@ -99,35 +108,36 @@ footer p {
 }
 
 #progress p {
-    font-family: "Roboto", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
     font-style: normal;
     font-size: medium;
 }
 
 input::placeholder {
-    font-family: "Roboto Slab", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
     font-style: normal;
     color: #e5e6e4;
 }
 
 .already-guessed {
     color: #a00c30;
-    font-family: "Roboto", serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
+    font-style: normal;
 }
 
 table, th, tr {
-    font-family: "Roboto", serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
+    font-style: normal;
 }
 
 th {
-    font-family: "Roboto", serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 600;
+    font-style: normal;
     background-color: #0f2044;
     color: #ffb71b;
 }
@@ -138,17 +148,26 @@ th {
 }
 
 .topnav .nav-link {
-    font-family: "Roboto Slab", serif;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
     background-color: #0f2044;
 }
 
 .topnav a {
-    font-family: "Roboto Slab", serif;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
     background-color: #FFFFFF;
 }
 
 .dropdown .dropbtn {
-    font-family: "Roboto Slab", serif;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .dropdown .dropdown-content a:hover {
